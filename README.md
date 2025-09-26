@@ -351,6 +351,16 @@ sudo cloud-init clean --logs
 echo -n > /etc/machine-id
 ```
 
+#### General 100% CPU Pinning
+Seems like its due to unattended upgrades
+```
+sudo rm /etc/apt/apt.conf.d/20auto-upgrades
+sudo rm /etc/apt/apt.conf.d/50unattended-upgrades
+
+sudo rm /etc/apt/apt.conf.d/20auto-upgrades
+sudo rm /etc/apt/apt.conf.d/50unattended-upgrades
+```
+
 ## Application Specific
 
 ### Nextcloud
