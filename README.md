@@ -306,7 +306,7 @@ sudo apt-get install -y containerd
 
 sudo mkdir -p /etc/containerd
 sudo containerd config default | sudo tee /etc/containerd/config.toml
-
+sudo sed -i 's/SystemdCgroup = false/SystemdCgroup = true/g' /etc/containerd/config.toml
 # Edit /etc/containerd/config.toml
 # find the [plugins."io.containerd.grpc.v1.cri".containerd.runtimes.runc.options] section and change systemdcgroup to true
 # ex: SystemdCgroup = true
