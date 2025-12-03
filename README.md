@@ -175,6 +175,15 @@ Gather pve name from ```pvesm status```
 Delete with ```pvesm remove <<pve name>>```  
 https://192.168.1.208:8006/pve-docs/chapter-pvesm.html#chapter_storage
 
+#### VM Statuses Unknown
+https://forum.proxmox.com/threads/vm-status-unknown-grey-question-mark.92359/  
+Fix by restarting pvestatd.service  
+```bash
+systemctl status pvestatd.service
+systemctl restart pvestatd.service # this failed for me last time
+systemctl start pvestatd.service # this worked- not sure why
+```
+
 ### Remove directory mounts
 Must do it via console
 ```
@@ -286,15 +295,6 @@ sudo apt-mark hold kubelet kubeadm kubectl
 
 sudo systemctl enable --now kubelet
 ```
-#### VM Statuses Unknown
-https://forum.proxmox.com/threads/vm-status-unknown-grey-question-mark.92359/  
-Fix by restarting pvestatd.service  
-```bash
-systemctl status pvestatd.service
-systemctl restart pvestatd.service # this failed for me last time
-systemctl start pvestatd.service # this worked- not sure why
-```
-
 #### Post Manual Package Install
 ```
 sudo cloud-init clean --logs
@@ -437,3 +437,12 @@ service cron reload
 
 #### KProximate
 - If you already injected SSH key into VM, disable SSH key injection otherwise you get 400 Parameter Validation error
+
+### OPNSense
+#### OpenVPN
+Force DNS update by adding following options to ovpn config file
+```
+dhcp-option DNS 192.168.1.1
+register-dns
+block-outside-dns
+```
