@@ -311,6 +311,10 @@ sudo rm /etc/apt/apt.conf.d/50unattended-upgrades
 sudo rm /etc/apt/apt.conf.d/20auto-upgrades
 sudo rm /etc/apt/apt.conf.d/50unattended-upgrades
 ```
+Or can run this command to manually disable
+```
+sudo dpkg-reconfigure unattended-upgrades
+```
 
 ## Application Specific
 
