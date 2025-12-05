@@ -149,6 +149,7 @@ zfs create HDD/kubernetes
 zfs create HDD/file-server
 zfs create HDD/backups
 zfs create HDD/backups/postgres
+zfs create HDD/backups/postgres-volume-snapshot
 zfs create HDD/docker_registry
 
 zfs set quota=10T HDD/jellyfin
@@ -158,6 +159,7 @@ zfs set quota=1T HDD/kubernetes
 zfs set quota=100G HDD/file-server
 zfs set quota=100G HDD/backups
 zfs set quota=50G HDD/backups/postgres
+zfs set quota=50G HDD/backups/postgres-volume-snapshot
 zfs set quota=50G HDD/docker_registry
 
 zfs set sharenfs='rw=@192.168.1.1/16,sync,no_root_squash' HDD/jellyfin/media
@@ -165,6 +167,7 @@ zfs set sharenfs='rw=@192.168.1.1/16,sync,no_root_squash' HDD/iso
 zfs set sharenfs='rw=@192.168.1.1/16,sync,no_root_squash' HDD/kubernetes
 zfs set sharenfs='rw=@192.168.1.1/16,sync,no_root_squash' HDD/file-server
 zfs set sharenfs='rw=@192.168.1.1/16,sync,no_root_squash' HDD/backups/postgres
+zfs set sharenfs='rw=@192.168.1.1/16,sync,no_root_squash' HDD/backups/postgres-volume-snapshot
 zfs set sharenfs='rw=@192.168.1.1/16,sync,no_root_squash' HDD/docker_registry
 ```
 
