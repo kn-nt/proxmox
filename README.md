@@ -79,6 +79,8 @@ zfs create ZFS/proxmox-vm
 zfs create ZFS/proxmox-other
 zfs create ZFS/game-data
 zfs create ZFS/game-data/terraria
+zfs create ZFS/game-data/minecraft
+zfs create ZFS/game-data/minecraft/skyfactory3
 zfs create ZFS/test
 zfs create ZFS/test/vaultwarden/config
 zfs create ZFS/test/vaultwarden/postgres-data
@@ -105,6 +107,8 @@ zfs set quota=100G ZFS/proxmox-vm
 zfs set quota=100G ZFS/proxmox-other
 zfs set quota=150G ZFS/game-data
 zfs set quota=50G ZFS/game-data/terraria
+zfs set quota=50G ZFS/game-data/minecraft
+zfs set quota=50G ZFS/game-data/minecraft/skyfactory3
 zfs set quota=50G ZFS/test
 zfs set quota=1G ZFS/cfg
 zfs set quota=20G ZFS/jenkins
@@ -127,6 +131,8 @@ zfs set sharenfs='rw=@192.168.1.1/16,sync,no_root_squash' ZFS/gitea/postgres-dat
 zfs set sharenfs='rw=@192.168.1.1/16,sync' ZFS/iso
 zfs set sharenfs='rw=@192.168.1.1/16,sync' ZFS/proxmox-other
 zfs set sharenfs='rw=@192.168.1.1/16,sync' ZFS/game-data/terraria
+zfs set sharenfs='rw=@192.168.1.1/16,sync' ZFS/game-data/minecraft
+zfs set sharenfs='rw=@192.168.1.1/16,sync' ZFS/game-data/minecraft/skyfactory3
 zfs set sharenfs='rw=@192.168.1.1/16,sync' ZFS/test
 zfs set sharenfs='rw=@192.168.1.1/16,sync' ZFS/test/vaultwarden/config
 zfs set sharenfs='rw=@192.168.1.1/16,sync,no_root_squash' ZFS/test/vaultwarden/postgres-data
