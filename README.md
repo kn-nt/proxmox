@@ -131,8 +131,8 @@ zfs set sharenfs='rw=@192.168.1.1/16,sync,no_root_squash' ZFS/gitea/postgres-dat
 zfs set sharenfs='rw=@192.168.1.1/16,sync' ZFS/iso
 zfs set sharenfs='rw=@192.168.1.1/16,sync' ZFS/proxmox-other
 zfs set sharenfs='rw=@192.168.1.1/16,sync' ZFS/game-data/terraria
-zfs set sharenfs='rw=@192.168.1.1/16,sync' ZFS/game-data/minecraft
-zfs set sharenfs='rw=@192.168.1.1/16,sync' ZFS/game-data/minecraft/skyfactory3
+zfs set sharenfs='rw=@192.168.1.1/16,sync,no_root_squash' ZFS/game-data/minecraft
+zfs set sharenfs='rw=@192.168.1.1/16,sync,no_root_squash' ZFS/game-data/minecraft/skyfactory3
 zfs set sharenfs='rw=@192.168.1.1/16,sync' ZFS/test
 zfs set sharenfs='rw=@192.168.1.1/16,sync' ZFS/test/vaultwarden/config
 zfs set sharenfs='rw=@192.168.1.1/16,sync,no_root_squash' ZFS/test/vaultwarden/postgres-data
